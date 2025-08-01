@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Braz Grill Assados - O melhor churrasco de Curitiba com carnes selecionadas e temperos especiais.">
+  <meta name="keywords" content="churrasco, assados, Curitiba, carnes, cardápio">
+  <title>Braz Grill Assados | Melhor Churrasco de Curitiba</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main role="main" class="main-content">
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="logo.png" alt="Logo do Braz Grill Assados">
+          <div class="logo-text">
+            <h1>BRAZ GRILL ASSADOS</h1>
+            <span>O melhor assado de Curitiba e Região!!</span>
+          </div>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <nav role="navigation" class="nav-menu">
+          <a href="#home">Home</a>
+          <a href="#cardapio">Cardápio</a>
+          <a href="#carnes-bovinas">Carnes Bovinas</a>
+          <a href="#frangos">Frangos</a>
+          <a href="#carnes-suinas">Carnes Suínas</a>
+          <a href="#acompanhamentos">Acompanhamentos</a>
+          <a href="#bebidas">Bebidas</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>O verdadeiro sabor do Assado Brasileiro</h1>
+          <p>Carnes selecionadas, temperos especiais e um toque caseiro que faz toda a diferença. Há mais de 20 anos levando qualidade à sua mesa.</p>
+          <a href="#cardapio" class="btn btn-primary"><i class="fas fa-utensils"></i> Ver Cardápio</a>
+          <a href="https://wa.me/5541988738707" class="btn btn-secondary"><i class="fas fa-shopping-cart"></i> Fazer Pedido</a>
+          <a href="#" class="btn btn-wifi"><i class="fas fa-wifi"></i> Conectar ao Wi-Fi</a>
+          <div class="wifi-dialog">
+            <p><strong>Nome da Rede:</strong> brazgrillassados</p>
+            <p><strong>Senha:</strong> melhorassado</p>
+          </div>
+        </div>
+        <div class="hero-video-container">
+          <video class="hero-video" preload="auto" autoplay loop muted>
+            <source src="videos/churrasco.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section id="cardapio">
+      <div class="section-title">
+        <h2>Nosso Cardápio</h2>
+        <p>Todos os nossos pratos são preparados diariamente com ingredientes frescos e selecionados</p>
+      </div>
+
+      <div class="menu-category" id="carnes-bovinas">
+        <h3>Carnes Bovinas</h3>
+        <p>Costela, fraldinha e cupim feitos no ponto perfeito.</p>
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/costela.jpg" alt="Costela de boi sem osso assada" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Costela de Boi Sem Osso</h4>
+              <p>Uma costela suculenta, assada lentamente em papel celofane para reter todos os sabores. O resultado é uma carne tão macia que desmancha na boca.</p>
+              <div class="menu-price">R$ 68,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Costela de Boi Sem Osso" data-price="68.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/fraldinha.jpg" alt="Fraldinha assada" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Fraldinha</h4>
+              <p>Corte nobre e saboroso, a fraldinha é assada em papel celofane até ficar perfeitamente macia e desfiável. Cada pedaço é uma explosão de suculência e aroma.</p>
+              <div class="menu-price">R$ 78,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Fraldinha" data-price="78.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/cupim.jpg" alt="Cupim assado" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Cupim</h4>
+              <p>O cupim é assado no papel celofane até atingir uma textura incrivelmente macia e um sabor rico e marcante.</p>
+              <div class="menu-price">R$ 78,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Cupim" data-price="78.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" id="frangos">
+        <h3>Frangos</h3>
+        <p>Frango recheado, meio frango, coxa com sobrecoxa e medalhão temperados com carinho.</p>
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/frango-recheado.jpg" alt="Frango recheado com farofa" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Frango com ou sem Recheio</h4>
+              <p>Frango inteiro, recheado com uma farofa de milho artesanal ou servido simples. Assado até a pele ficar dourada e suculenta.</p>
+              <div class="menu-price">R$ 45,00 a unidade</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" aria-label="Quantidade em unidades">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>unidade(s)</span>
+              </div>
+              <div class="option-buttons">
+                <button class="btn btn-primary option" data-option="com-farofa">Com Farofa</button>
+                <button class="btn btn-primary option" data-option="sem-farofa">Sem Farofa</button>
+              </div>
+              <button class="btn btn-cart" data-name="Frango com ou sem Recheio" data-price="45.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/meio-frango.jpg" alt="Meio frango assado" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Meio Frango</h4>
+              <p>Metade de um frango assado, com a pele crocante e a carne suculenta, ideal para quem deseja uma refeição rápida e deliciosa.</p>
+              <div class="menu-price">R$ 22,00 a unidade</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" aria-label="Quantidade em unidades">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>unidade(s)</span>
+              </div>
+              <button class="btn btn-cart" data-name="Meio Frango" data-price="22.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/coxa-sobrecoxa.jpg" alt="Coxa com sobrecoxa assada" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Coxa com Sobrecoxa</h4>
+              <p>Coxa com sobrecoxa assadas até ficarem douradas e suculentas.</p>
+              <div class="menu-price">R$ 38,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Coxa com Sobrecoxa" data-price="38.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/medalhao-frango.jpg" alt="Medalhão de frango com bacon" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Medalhão de Frango</h4>
+              <p>Peito de frango envolto em fatias de bacon, assado até ficar com uma crosta caramelizada e o interior macio e saboroso.</p>
+              <div class="menu-price">R$ 75,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Medalhão de Frango" data-price="75.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category" id="carnes-suinas">
+        <h3>Carnes Suínas</h3>
+        <p>Costelinha, copa lombo e joelho Eisbein com pururuca crocante.</p>
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/costelinha.jpg" alt="Costelinha suína com pururuca" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Costelinha Pururuca</h4>
+              <p>Costelinha de porco assada até a pele ficar estaladiça (pururuca), com a carne tão macia que se solta do osso.</p>
+              <div class="menu-price">R$ 68,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Costelinha Pururuca" data-price="68.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/copa-lombo.jpg" alt="Copa lombo suíno assado" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Copa Lombo</h4>
+              <p>Corte suíno suculento e saboroso, assado lentamente para garantir maciez e um sabor inigualável.</p>
+              <div class="menu-price">R$ 68,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Copa Lombo" data-price="68.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/paleta.jpg" alt="Paleta suína com pururuca" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Paleta Suína</h4>
+              <p>Paleta de porco preparada no estilo pururuca, com a pele crocante e a carne desfiável, repleta de temperos especiais.</p>
+              <div class="menu-price">R$ 49,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Paleta Suína" data-price="49.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/joelho.jpg" alt="Joelho suíno Eisbein" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Joelho Eisbein</h4>
+              <p>Joelho suíno assado até a pele ficar crocante e a carne macia, uma combinação perfeita de texturas e sabores.</p>
+              <div class="menu-price">R$ 49,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Joelho Eisbein" data-price="49.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/linguiça.jpg" alt="Linguiça de pernil e lombo" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Linguiça de Pernil e Lombo</h4>
+              <p>Linguiça artesanal feita com cortes nobres de pernil e lombo, sem conservantes, ideal para churrasco.</p>
+              <div class="menu-price">R$ 38,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Linguiça de Pernil e Lombo" data-price="38.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/medalhao-suino.jpg" alt="Medalhão suíno com bacon" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Medalhão Suíno</h4>
+              <p>Copa lombo envolta em bacon, assada até ficar com uma crosta dourada e o interior suculento e cheio de sabor.</p>
+              <div class="menu-price">R$ 75,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Medalhão Suíno" data-price="75.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category acompanhamentos-category" id="acompanhamentos">
+        <h3>Acompanhamentos Especiais</h3>
+        <p>Complementos perfeitos para realçar o sabor dos nossos assados.</p>
+        <div class="menu-items">
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/maionese.jpg" alt="Maionese caseira" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Maionese Caseira</h4>
+              <p>Nossa maionese artesanal é feita com leite fresco, batata e óleo de qualidade, resultando em um creme leve e saboroso que combina perfeitamente com todos os nossos assados.</p>
+              <div class="menu-price">R$ 8,00 unidade</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" aria-label="Quantidade em unidades">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>unidade(s)</span>
+              </div>
+              <button class="btn btn-cart" data-name="Maionese Caseira" data-price="8.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/farofa.jpg" alt="Farofa de paçoca de carne" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Farofa de Paçoca de Carne</h4>
+              <p>Farofa crocante preparada com toucinho de porco e carne seca, uma receita tradicional que traz um toque especial ao seu prato.</p>
+              <div class="menu-price">R$ 10,00 unidade</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" aria-label="Quantidade em unidades">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>unidade(s)</span>
+              </div>
+              <button class="btn btn-cart" data-name="Farofa de Paçoca de Carne" data-price="10.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-img">
+              <img src="cardapio/linguiça-frescal.jpg" alt="Linguiça artesanal frescal" loading="lazy">
+            </div>
+            <div class="menu-item-content">
+              <h4>Linguiça Artesanal Frescal de Lombo e Pernil</h4>
+              <p>Linguiça frescal artesanal, preparada com cortes selecionados de lombo e pernil, temperada com ervas naturais, perfeita como acompanhamento para seu assado ou churrasco.</p>
+              <div class="menu-price">R$ 20,00 kg</div>
+              <div class="quantity-control">
+                <button class="minus" aria-label="Diminuir quantidade">-</button>
+                <input type="number" value="1" min="1" step="0.5" aria-label="Quantidade em quilogramas">
+                <button class="plus" aria-label="Aumentar quantidade">+</button>
+                <span>kg</span>
+              </div>
+              <button class="btn btn-cart" data-name="Linguiça Artesanal Frescal de Lombo e Pernil" data-price="20.00">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bebidas">
+      <div class="section-title">
+        <h2>Bebidas</h2>
+        <p>Acompanhe seu Assado com nossas bebidas selecionadas</p>
+      </div>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="bebidas/agua.jpg" alt="Garrafa de água mineral" loading="lazy">
+          <div class="gallery-overlay">
+            <h4>Água</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="bebidas/coca.jpg" alt="Lata de Coca-Cola" loading="lazy">
+          <div class="gallery-overlay">
+            <h4>Coca</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="bebidas/tubaina.jpg" alt="Garrafa de Tubaina" loading="lazy">
+          <div class="gallery-overlay">
+            <h4>Tubaina</h4>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="bebidas/cervejas.jpg" alt="Cervejas artesanais" loading="lazy">
+          <div class="gallery-overlay">
+            <h4>Cervejas</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="section-title">
+        <h2>Comentários no Google Maps</h2>
+        <p>Veja o que nossos clientes estão dizendo sobre nós no Google Maps!</p>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial-item">
+          <p>"Melhor Assado de Curitiba! As carnes são sempre frescas e muito bem preparadas. A costelinha pururuca é simplesmente incrível!"</p>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="testimonial-author">
+            <img src="avatars/avatar1.jpg" alt="Foto de perfil de João Silva">
+            <span>João Silva</span>
+          </div>
+        </div>
+        <div class="testimonial-item">
+          <p>"Atendimento excepcional e comida de altíssima qualidade. A maionese caseira é um diferencial que faz toda a diferença!"</p>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="testimonial-author">
+            <img src="avatars/avatar2.jpg" alt="Foto de perfil de Maria Oliveira">
+            <span>Maria Oliveira</span>
+          </div>
+        </div>
+        <div class="testimonial-item">
+          <p>"Ambiente acolhedor e carnes no ponto perfeito. Recomendo o frango recheado, é uma delícia! Sempre volto."</p>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="testimonial-author">
+            <img src="avatars/avatar3.jpg" alt="Foto de perfil de Carlos Souza">
+            <span>Carlos Souza</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contato">
+  <div class="contact-container">
+    <div class="contact-info">
+      <h3>Entre em Contato</h3>
+      <div class="business-card">
+        <div class="business-header">
+          <img src="logo.png" alt="Logo Braz Grill Assados" class="business-logo">
+          <div class="business-details">
+            <h4>Braz Grill Assados</h4>
+            <div class="rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="rating-text">4.6 (307 avaliações)</span>
+            </div>
+            <span class="business-type">Churrascaria • Assados De Carnes </span>
+          </div>
+        </div>
+        
+        <div class="business-info">
+          <p><i class="fas fa-map-marker-alt"></i> Rua República Islâmica do Irã, 330 - Jardim das Américas, Curitiba/PR</p>
+          <p><i class="fas fa-phone"></i> (41) 98873-8707</p>
+          <p><i class="fas fa-clock"></i> 
+            <span class="hours-status open">Aberto aos finais de semana</span>
+            <br><medium>Sábado: 10h às 14h • Domingo: 10h às 16h</small>
+          </p>
+        </div>
+
+        <div class="action-buttons">
+          <a href="https://www.google.com.br/maps/dir//Assados+Braz+Grill+-+R.+Rep%C3%BAblica+Isl%C3%A2mica+do+Ir%C3%A3,+330+-+Jardim+das+Am%C3%A9ricas,+Curitiba+-+PR,+81540-082/@-25.4655465,-49.2201895,912m/data=!3m1!1e3!4m17!1m7!3m6!1s0x94dce54eb9e5d6d1:0x20b5cdb38d925df8!2sAssados+Braz+Grill!8m2!3d-25.4655514!4d-49.2176092!16s%2Fg%2F11c6chws8j!4m8!1m0!1m5!1m1!1s0x94dce54eb9e5d6d1:0x20b5cdb38d925df8!2m2!1d-49.2176092!2d-25.4655514!3e2?entry=ttu&g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D" 
+             target="_blank" class="btn btn-directions">
+            <i class="fas fa-directions"></i> Como Chegar
+          </a>
+          <a href="https://maps.app.goo.gl/ZnEu8iQLPqABkuFY8" 
+             target="_blank" class="btn btn-maps">
+            <i class="fas fa-external-link-alt"></i> Ver no Maps
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.facebook.com/BRAZGRILLASSADOS/" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/brazgrillassados" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/5541988738707" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.google.com.br/maps/place/Assados+Braz+Grill/@-25.4655514,-49.2176092,912m/data=!3m1!1e3!4m18!1m9!3m8!1s0x94dce54eb9e5d6d1:0x20b5cdb38d925df8!2sAssados+Braz+Grill!8m2!3d-25.4655514!4d-49.2176092!9m1!1b1!16s%2Fg%2F11c6chws8j!3m7!1s0x94dce54eb9e5d6d1:0x20b5cdb38d925df8!8m2!3d-25.4655514!4d-49.2176092!9m1!1b1!16s%2Fg%2F11c6chws8j?entry=ttu&g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="Avaliar no Google">
+            <i class="fab fa-google"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="map-container">
+      <div class="map-header">
+        <h4>Nossa Localização</h4>
+        <p>Jardim das Américas, Curitiba - PR</p>
+      </div>
+      <div class="map-wrapper">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d909.0!2d-49.2201841!3d-25.4655514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce54eb9e5d6d1%3A0x20b5cdb38d925df8!2sAssados%20Braz%20Grill!5e0!3m2!1spt-BR!2sbr!4v1697654321000!5m2!1spt-BR!2sbr" 
+          allowfullscreen 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-overlay">
+          <div class="location-pin">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Braz Grill Assados</span>
+          </div>
+        </div>
+      </div>
+      <div class="map-footer">
+        <div class="distance-info">
+          <i class="fas fa-car"></i>
+          <span>~15 min do centro de Curitiba</span>
+        </div>
+        <div class="parking-info">
+          <i class="fas fa-parking"></i>
+          <span>Estacionamento disponível</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <footer role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Sobre Nós</h4>
+          <p>Há mais de 20 anos no mercado, o Braz Grill se dedica a oferecer os melhores assados com qualidade e tradição.</p>
+          <p>Começamos nosso preparo às 5h da manhã para garantir o melhor sabor e suculência em nossos pratos.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Horário de Funcionamento</h4>
+          <p>Sábado: 10h às 14h</p>
+          <p>Domingo: 10h às 16h</p>
+          <p>Assamos todos os sábados e domingos, independente de feriados.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#home"><i class="fas fa-angle-right"></i> Home</a></li>
+            <li><a href="#cardapio"><i class="fas fa-angle-right"></i> Cardápio</a></li>
+            <li><a href="#carnes-bovinas"><i class="fas fa-angle-right"></i> Carnes Bovinas</a></li>
+            <li><a href="#frangos"><i class="fas fa-angle-right"></i> Frangos</a></li>
+            <li><a href="#carnes-suinas"><i class="fas fa-angle-right"></i> Carnes Suínas</a></li>
+            <li><a href="#acompanhamentos"><i class="fas fa-angle-right"></i> Acompanhamentos</a></li>
+            <li><a href="#bebidas"><i class="fas fa-angle-right"></i> Bebidas</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 Braz Grill Assados. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <div class="floating-buttons">
+      <a href="https://wa.me/5541988738707" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <span>Pedir pelo WhatsApp</span>
+      </a>
+      <div class="cart-toggle btn btn-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Carrinho (<span id="cartCount">0</span>)</span>
+      </div>
+    </div>
+
+    <div class="mascote">
+      <img src="mascote.png" alt="Mascote do Braz Grill Assados">
+    </div>
+
+    <div class="image-modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <img src="/placeholder.svg" alt="Imagem ampliada">
+      </div>
+    </div>
+
+    <div class="cart-modal">
+      <div class="modal-content">
+        <h2>Seu Carrinho</h2>
+        <div id="cartItems"></div>
+        <div class="cart-message"></div>
+        <div class="cart-total">Total: R$ 0,00</div>
+        <a href="#" class="btn btn-primary finalize-order">Finalizar Pedido</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
