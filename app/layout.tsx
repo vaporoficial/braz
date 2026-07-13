@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -31,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br" className="scroll-smooth">
-      <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased`}>{children}</body>
+    <html lang="pt-br" className={`scroll-smooth bg-background ${inter.variable} ${montserrat.variable}`}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   )
 }

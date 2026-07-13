@@ -15,13 +15,17 @@ export function CartButton() {
     <>
       <Button
         variant="outline"
-        size="sm"
+        size="icon"
+        className="relative bg-transparent border-border"
         onClick={() => setIsModalOpen(true)}
-        className="relative bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white border-none font-semibold"
       >
-        <ShoppingCart className="h-4 w-4 mr-2" />
-        Carrinho
-        {totalItems > 0 && <Badge className="ml-2 bg-yellow-400 text-black font-bold">{totalItems}</Badge>}
+        <span className="sr-only">Abrir carrinho</span>
+        <ShoppingCart className="h-5 w-5" />
+        {totalItems > 0 && (
+          <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs min-w-[20px] h-5 flex items-center justify-center p-0">
+            {totalItems}
+          </Badge>
+        )}
       </Button>
 
       <CartModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

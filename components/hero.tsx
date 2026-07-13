@@ -2,8 +2,17 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Utensils, ShoppingCart, Wifi, Flame } from "lucide-react"
+import { Utensils, ShoppingCart, Wifi, Flame, Star } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+
+const embers = [
+  { left: "12%", delay: "0s", duration: "6s" },
+  { left: "28%", delay: "1.5s", duration: "7s" },
+  { left: "45%", delay: "0.8s", duration: "5.5s" },
+  { left: "63%", delay: "2.2s", duration: "6.5s" },
+  { left: "80%", delay: "1s", duration: "7.5s" },
+  { left: "90%", delay: "3s", duration: "6s" },
+]
 
 export function Hero() {
   const [showWifiInfo, setShowWifiInfo] = useState(false)
@@ -16,89 +25,91 @@ export function Hero() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      const headerHeight = 100
-      const targetPosition = element.offsetTop - headerHeight
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      })
+      const targetPosition = element.offsetTop - 90
+      window.scrollTo({ top: targetPosition, behavior: "smooth" })
     }
   }
 
   return (
-    <section id="home" className="relative min-h-[80vh] flex items-center overflow-hidden">
-      {/* Animated Background */}
+    <section id="home" className="relative min-h-[85vh] flex items-center overflow-hidden">
+      {/* Background image with warm overlay */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 bg-cover bg-center transition-all duration-1000"
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-[1500ms]"
         style={{
-          backgroundImage: `url('/cardapio/loja.jpg')`,
-          transform: isVisible ? "scale(1)" : "scale(1.1)",
+          backgroundImage: `url('/hero.jpg')`,
+          transform: isVisible ? "scale(1)" : "scale(1.08)",
         }}
       />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
 
-      {/* Floating Fire Particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <div
+      {/* Subtle rising embers */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {embers.map((e, i) => (
+          <span
             key={i}
-            className="absolute animate-float-fire opacity-60"
-            style={{
-              left: `${10 + i * 12}%`,
-              top: `${20 + (i % 3) * 20}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${3 + i * 0.5}s`,
-            }}
-          >
-            <Flame className="h-6 w-6 text-orange-400" />
-          </div>
+            className="absolute bottom-0 h-2 w-2 rounded-full bg-accent/70 blur-[1px] animate-ember-rise"
+            style={{ left: e.left, animationDelay: e.delay, animationDuration: e.duration }}
+          />
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content with Staggered Animation */}
+          {/* Content */}
           <div className="text-white space-y-6">
-            <h1
-              className={`text-5xl lg:text-6xl font-bold leading-tight transition-all duration-1000 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            <span
+              className={`inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm font-medium backdrop-blur-sm transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
-              style={{ transitionDelay: "0.2s" }}
             >
-              O verdadeiro sabor do <span className="text-yellow-400 animate-pulse-glow">Assado Brasileiro</span>
+              <Star className="h-4 w-4 text-accent fill-accent" />
+              +20 anos de tradição em Curitiba
+            </span>
+
+            <h1
+              className={`font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-balance transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: "0.1s" }}
+            >
+              O verdadeiro sabor do{" "}
+              <span className="text-accent">assado brasileiro</span>
             </h1>
 
             <p
-              className={`text-xl leading-relaxed text-gray-200 transition-all duration-1000 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              className={`text-lg md:text-xl leading-relaxed text-white/80 max-w-xl text-pretty transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
-              style={{ transitionDelay: "0.4s" }}
+              style={{ transitionDelay: "0.2s" }}
             >
-              Carnes selecionadas, temperos especiais e um toque caseiro que faz toda a diferença. Há mais de 20 anos
-              levando qualidade à sua mesa.
+              Carnes selecionadas, temperos especiais e um toque caseiro que faz toda a diferença — assados lentamente
+              até o ponto perfeito.
             </p>
 
             <div
-              className={`flex flex-wrap gap-4 transition-all duration-1000 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              className={`flex flex-wrap gap-3 transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
-              style={{ transitionDelay: "0.6s" }}
+              style={{ transitionDelay: "0.3s" }}
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-red-600 to-yellow-500 hover:from-red-700 hover:to-yellow-600 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 hover:scale-105 animate-bounce-subtle"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-7 shadow-lg transition-transform hover:-translate-y-0.5"
                 onClick={() => scrollToSection("cardapio")}
               >
-                <Utensils className="mr-2 h-5 w-5 animate-spin-slow" />
+                <Utensils className="mr-2 h-5 w-5" />
                 Ver Cardápio
               </Button>
 
               <Button
                 size="lg"
-                variant="outline"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white border-white/20 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 hover:scale-105 animate-pulse-border"
+                className="bg-[#25D366] hover:bg-[#1fb959] text-white font-bold rounded-full px-7 shadow-lg transition-transform hover:-translate-y-0.5"
                 onClick={() => window.open("https://wa.me/5541988738707", "_blank")}
               >
-                <ShoppingCart className="mr-2 h-5 w-5 animate-bounce" />
+                <ShoppingCart className="mr-2 h-5 w-5" />
                 Fazer Pedido
               </Button>
 
@@ -106,66 +117,69 @@ export function Hero() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-green-600 hover:bg-green-700 text-white border-green-500 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 hover:scale-105 animate-wifi-pulse"
+                  className="bg-white/10 hover:bg-white/20 text-white border-white/30 font-bold rounded-full px-7 backdrop-blur-sm"
                   onMouseEnter={() => setShowWifiInfo(true)}
                   onMouseLeave={() => setShowWifiInfo(false)}
                 >
-                  <Wifi className="mr-2 h-5 w-5 animate-ping-slow" />
-                  Conectar ao Wi-Fi
+                  <Wifi className="mr-2 h-5 w-5" />
+                  Wi-Fi
                 </Button>
 
                 {showWifiInfo && (
-                  <Card className="absolute top-full mt-2 left-0 z-20 shadow-xl animate-slide-up">
-                    <CardContent className="p-4 text-center">
-                      <p className="text-sm font-semibold text-gray-800 mb-1 animate-fade-in">
-                        <strong className="text-red-600">Rede:</strong> brazgrillassados
+                  <Card className="absolute top-full mt-2 left-0 z-20 shadow-xl animate-slide-up border-border">
+                    <CardContent className="p-4 text-left">
+                      <p className="text-sm font-semibold text-card-foreground mb-1">
+                        <span className="text-primary">Rede:</span> brazgrillassados
                       </p>
-                      <p
-                        className="text-sm font-semibold text-gray-800 animate-fade-in"
-                        style={{ animationDelay: "0.1s" }}
-                      >
-                        <strong className="text-red-600">Senha:</strong> melhorassado
+                      <p className="text-sm font-semibold text-card-foreground">
+                        <span className="text-primary">Senha:</span> melhorassado
                       </p>
                     </CardContent>
                   </Card>
                 )}
               </div>
             </div>
+
+            {/* Quick stats */}
+            <div
+              className={`flex gap-8 pt-4 transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: "0.4s" }}
+            >
+              {[
+                { value: "20+", label: "Anos de história" },
+                { value: "4.8", label: "Nota no Google" },
+                { value: "100%", label: "Carnes selecionadas" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <div className="font-heading text-2xl font-extrabold text-accent">{s.value}</div>
+                  <div className="text-xs text-white/70">{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Video with Enhanced Animation */}
+          {/* Video */}
           <div
-            className={`flex justify-center lg:justify-end transition-all duration-1000 ${
-              isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+            className={`flex justify-center lg:justify-end transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
-            style={{ transitionDelay: "0.8s" }}
+            style={{ transitionDelay: "0.4s" }}
           >
-            <div className="relative animate-float-video">
+            <div className="relative animate-float-soft">
               <video
-                className="w-full max-w-sm h-[500px] object-cover rounded-2xl shadow-2xl border-4 border-white/20 hover:border-yellow-400/50 transition-all duration-500 hover:scale-105"
+                className="w-full max-w-sm h-[480px] object-cover rounded-2xl shadow-2xl border-4 border-white/15"
                 autoPlay
                 loop
                 muted
                 playsInline
+                poster="/hero.jpg"
               >
                 <source src="/videos/churrasco.mp4" type="video/mp4" />
-                <div className="w-full max-w-sm h-[500px] bg-gray-800 rounded-2xl shadow-2xl border-4 border-white/20 flex items-center justify-center">
-                  <div className="text-white text-center animate-pulse">
-                    <div className="text-6xl mb-4 animate-bounce">🔥</div>
-                    <p className="text-lg font-semibold">Vídeo do Churrasco</p>
-                    <p className="text-sm opacity-75">Carregando...</p>
-                  </div>
-                </div>
               </video>
-
-              {/* Glowing Border Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-yellow-400/20 via-transparent to-red-400/20 pointer-events-none animate-glow-border" />
-
-              {/* Floating Icons Around Video */}
-              <div className="absolute -top-4 -right-4 animate-bounce-slow">
-                <div className="bg-red-600 rounded-full p-2 shadow-lg">
-                  <Flame className="h-4 w-4 text-white animate-flicker" />
-                </div>
+              <div className="absolute -bottom-4 -left-4 bg-primary text-primary-foreground rounded-full p-3 shadow-lg">
+                <Flame className="h-5 w-5" />
               </div>
             </div>
           </div>

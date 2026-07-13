@@ -1,89 +1,113 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ChevronRight } from "lucide-react"
+import { Heart, ChevronUp, Facebook, Instagram, MessageCircle } from "lucide-react"
 
 export function Footer() {
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" })
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const headerHeight = 100
-      const targetPosition = element.offsetTop - headerHeight
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      })
-    }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
   }
 
-  return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* About */}
-          <div>
-            <h4 className="text-lg font-bold mb-4 relative pb-2">
-              Sobre Nós
-              <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-red-600" />
-            </h4>
-            <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              Há mais de 20 anos no mercado, o Braz Grill se dedica a oferecer os melhores assados com qualidade e
-              tradição.
-            </p>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Começamos nosso preparo às 5h da manhã para garantir o melhor sabor e suculência em nossos pratos.
-            </p>
-          </div>
+  const links = [
+    { label: "Início", id: "home" },
+    { label: "Cardápio", id: "cardapio" },
+    { label: "Bebidas", id: "bebidas" },
+    { label: "Avaliações", id: "testimonials" },
+    { label: "Contato", id: "contato" },
+  ]
 
-          {/* Hours */}
-          <div>
-            <h4 className="text-lg font-bold mb-4 relative pb-2">
-              Horário de Funcionamento
-              <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-red-600" />
-            </h4>
-            <div className="space-y-2 text-sm text-gray-300">
-              <p>Sábado: 10h às 14h</p>
-              <p>Domingo: 10h às 16h</p>
-              <p className="text-xs text-gray-400 mt-3">
-                Assamos todos os sábados e domingos, independente de feriados.
-              </p>
+  return (
+    <footer className="bg-foreground text-background/80">
+      <div className="max-w-7xl mx-auto px-6 py-14">
+        <div className="grid md:grid-cols-4 gap-10 mb-10">
+          {/* Brand */}
+          <div className="md:col-span-2">
+            <h3 className="brand-text text-2xl mb-4">BRAZ GRILL ASSADOS</h3>
+            <p className="text-background/60 mb-5 leading-relaxed max-w-md text-pretty">
+              Há mais de 20 anos oferecendo o melhor churrasco de Curitiba com carnes premium, temperos especiais e
+              tradição familiar.
+            </p>
+            <div className="flex gap-3">
+              <Button
+                size="icon"
+                variant="outline"
+                className="rounded-full border-background/20 bg-transparent hover:bg-background/10 text-background"
+                onClick={() => window.open("https://www.facebook.com/BRAZGRILLASSADOS/", "_blank")}
+              >
+                <span className="sr-only">Facebook</span>
+                <Facebook className="h-5 w-5" />
+              </Button>
+              <Button
+                size="icon"
+                variant="outline"
+                className="rounded-full border-background/20 bg-transparent hover:bg-background/10 text-background"
+                onClick={() => window.open("https://www.instagram.com/brazgrillassados", "_blank")}
+              >
+                <span className="sr-only">Instagram</span>
+                <Instagram className="h-5 w-5" />
+              </Button>
+              <Button
+                size="icon"
+                variant="outline"
+                className="rounded-full border-background/20 bg-transparent hover:bg-background/10 text-background"
+                onClick={() => window.open("https://wa.me/5541988738707", "_blank")}
+              >
+                <span className="sr-only">WhatsApp</span>
+                <MessageCircle className="h-5 w-5" />
+              </Button>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4 relative pb-2">
-              Links Rápidos
-              <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-red-600" />
-            </h4>
+            <h4 className="font-heading text-background font-bold mb-4">Links Rápidos</h4>
             <div className="space-y-2">
-              {[
-                { label: "Home", id: "home" },
-                { label: "Cardápio", id: "cardapio" },
-                { label: "Carnes Bovinas", id: "carnes-bovinas" },
-                { label: "Frangos", id: "frangos" },
-                { label: "Carnes Suínas", id: "carnes-suinas" },
-                { label: "Acompanhamentos", id: "acompanhamentos" },
-                { label: "Bebidas", id: "bebidas" },
-              ].map((item) => (
-                <Button
+              {links.map((item) => (
+                <button
                   key={item.id}
-                  variant="ghost"
-                  size="sm"
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-red-400 justify-start p-0 h-auto font-normal text-sm transition-all hover:translate-x-1"
+                  className="block text-background/60 hover:text-accent transition-colors text-left"
                 >
-                  <ChevronRight className="h-3 w-3 mr-2" />
                   {item.label}
-                </Button>
+                </button>
               ))}
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-heading text-background font-bold mb-4">Contato</h4>
+            <div className="space-y-2 text-background/60 text-sm">
+              <p>Rua República Islâmica do Irã, 330</p>
+              <p>Jardim das Américas, Curitiba/PR</p>
+              <p>(41) 98873-8707</p>
+              <div className="mt-4">
+                <p className="text-background font-semibold mb-1">Horários:</p>
+                <p>Sábado: 10h às 14h</p>
+                <p>Domingo: 10h às 16h</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-800 pt-6 text-center">
-          <p className="text-sm text-gray-400">© 2025 Braz Grill Assados. Todos os direitos reservados.</p>
+        <div className="border-t border-background/15 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-background/50 text-sm">© 2025 Braz Grill Assados. Todos os direitos reservados.</p>
+          <div className="flex items-center gap-4">
+            <p className="text-background/50 text-sm flex items-center gap-1">
+              Feito com <Heart className="h-4 w-4 text-primary fill-primary" /> para nossos clientes
+            </p>
+            <Button
+              size="icon"
+              variant="outline"
+              className="border-background/20 text-background hover:bg-background/10 bg-transparent rounded-full"
+              onClick={scrollToTop}
+            >
+              <span className="sr-only">Voltar ao topo</span>
+              <ChevronUp className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </div>
     </footer>

@@ -146,28 +146,22 @@ const accompaniments = [
     unit: "unidade",
     image: "/cardapio/farofa.jpg",
   },
-  {
-    id: "linguica-frescal",
-    name: "Linguiça Artesanal Frescal de Lombo e Pernil",
-    description:
-      "Linguiça frescal artesanal, preparada com cortes selecionados de lombo e pernil, temperada com ervas naturais, perfeita como acompanhamento para seu assado ou churrasco.",
-    price: 20.0,
-    unit: "kg",
-    image: "/cardapio/linguica-frescal.jpg",
-  },
 ]
 
 export function MenuSection() {
   return (
-    <section id="cardapio" className="py-20 px-6">
+    <section id="cardapio" className="py-20 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-red-600 mb-4 relative inline-block">
+        <div className="text-center mb-14">
+          <span className="inline-block text-sm font-semibold uppercase tracking-wider text-primary mb-3">
             Nosso Cardápio
-            <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-red-600 via-yellow-400 to-orange-500 rounded-full shadow-lg" />
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-foreground mb-4 text-balance">
+            Assados no ponto perfeito
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Todos os nossos pratos são preparados diariamente com ingredientes frescos e selecionados
+          <span className="mx-auto block w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full" />
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-5 text-pretty">
+            Todos os pratos são preparados diariamente com ingredientes frescos e selecionados.
           </p>
         </div>
 
@@ -193,10 +187,7 @@ export function MenuSection() {
             items={porkItems}
           />
 
-          <div
-            id="acompanhamentos"
-            className="bg-gradient-to-br from-amber-50 to-stone-100 rounded-3xl p-8 border border-amber-200 shadow-lg"
-          >
+          <div id="acompanhamentos" className="bg-secondary rounded-3xl p-6 md:p-10 border border-border">
             <MenuCategory
               title="Acompanhamentos Especiais"
               description="Complementos perfeitos para realçar o sabor dos nossos assados."

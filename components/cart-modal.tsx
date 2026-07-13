@@ -40,7 +40,7 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-red-600">Seu Carrinho</DialogTitle>
+          <DialogTitle className="font-heading text-2xl font-bold text-primary">Seu Carrinho</DialogTitle>
         </DialogHeader>
 
         {items.length === 0 ? (
@@ -84,16 +84,17 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
                     </Button>
                   </div>
 
-                  <Badge variant="secondary" className="bg-red-100 text-red-700 font-bold">
+                  <Badge variant="secondary" className="bg-secondary text-primary font-bold">
                     R$ {(item.price * item.quantity).toFixed(2)}
                   </Badge>
 
                   <Button
                     variant="outline"
                     size="icon"
-                    className="h-8 w-8 text-red-600 hover:bg-red-50 bg-transparent"
+                    className="h-8 w-8 text-primary hover:bg-secondary bg-transparent"
                     onClick={() => removeFromCart(item.id)}
                   >
+                    <span className="sr-only">Remover item</span>
                     <Trash2 className="h-4 w-4" />
                   </Button>
                 </div>
@@ -103,12 +104,12 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
             <div className="border-t pt-4">
               <div className="flex justify-between items-center mb-4">
                 <span className="text-xl font-bold">Total:</span>
-                <span className="text-2xl font-bold text-red-600">R$ {totalPrice.toFixed(2)}</span>
+                <span className="font-heading text-2xl font-bold text-primary">R$ {totalPrice.toFixed(2)}</span>
               </div>
 
               <Button
                 onClick={handleWhatsAppOrder}
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 text-lg"
+                className="w-full bg-[#25D366] hover:bg-[#1fb959] text-white font-bold py-3 text-lg rounded-full"
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Finalizar Pedido no WhatsApp
